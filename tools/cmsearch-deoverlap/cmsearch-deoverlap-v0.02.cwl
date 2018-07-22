@@ -51,7 +51,6 @@ hints:
           - '0.02'
   - class: DockerRequirement
     dockerPull: biocrusoe/cmsearch-deoverlap
-  - class: DockerRequirement
   - class: gx:interface
     gx:inputs:
       - gx:name: clan_information
