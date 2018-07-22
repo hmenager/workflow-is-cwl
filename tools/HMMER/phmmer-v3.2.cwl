@@ -68,8 +68,7 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hmmer:3.2--hfc679d8_3
-hints:
-  gx:interface:
+  - class: gx:interface
     gx:inputs:
       - gx:name: bitscoreThreshold
         gx:type: integer
