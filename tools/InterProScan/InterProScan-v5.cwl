@@ -1,6 +1,7 @@
 class: CommandLineTool
 cwlVersion: v1.0
 $namespaces:
+  gx: "http://galaxyproject.org/cwl#"
   iana: 'https://www.iana.org/assignments/media-types/'
   s: 'http://schema.org/'
   sbg: 'https://www.sevenbridges.com'
@@ -95,8 +96,16 @@ hints:
           - 5.26-65.0
           - 5.27-66.0
           - 5.28-67.0
-  - class: DockerRequirement
-    dockerPull: 'olat/interproscan:latest'
+#  - class: DockerRequirement
+#    dockerPull: 'olat/interproscan:latest'
+  - class: gx:interface
+    gx:inputs:
+      - gx:name: applications
+        gx:type: text
+        gx:optional: True
+      - gx:name: proteinFile
+        gx:type: data
+        gx:format: 'txt'
 $schemas:
   - 'https://schema.org/docs/schema_org_rdfa.html'
 's:copyrightHolder': 'EMBL - European Bioinformatics Institute, 2018'
