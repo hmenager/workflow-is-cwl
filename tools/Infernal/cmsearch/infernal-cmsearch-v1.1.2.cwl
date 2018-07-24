@@ -52,7 +52,7 @@ inputs:
       position: 2
     streamable: true
   - id: search_space_size
-    type: int
+    type: int?
     inputBinding:
       position: 0
       prefix: '-Z'
