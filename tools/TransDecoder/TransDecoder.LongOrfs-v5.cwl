@@ -116,8 +116,7 @@ hints:
         gx:format: 'txt'
         gx:optional: True
       - gx:name: geneticCode
-        gx:type: data
-        gx:format: 'txt'
+        gx:type: text 
         gx:optional: True
       - gx:name: minimumProteinLength
         gx:type: integer
