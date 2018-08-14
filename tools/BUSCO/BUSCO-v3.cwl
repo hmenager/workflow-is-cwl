@@ -275,8 +275,8 @@ hints:
         gx:type: boolean
         gx:optional: True
       - gx:name: sequenceFile
-        format: 'edam:format_1929'
-        gx:type: File
+        gx:format: 'txt'
+        gx:type: data
       - gx:name: species
         gx:type: text
         gx:optional: True
