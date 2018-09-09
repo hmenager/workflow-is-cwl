@@ -49,7 +49,7 @@ doc: >
 
   Releases can be downloaded from https://github.com/EddyRivasLab/hmmer/releases
 label: >-
-  Search a single protein sequence against a protein sequence database.
+  HMMER: Search a single protein sequence against a protein sequence database.
   (BLASTP-like)
 arguments:
   - position: 0

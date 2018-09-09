@@ -82,7 +82,8 @@ doc: >
 
   Version 1.1.2 can be downloaded from
   http://eddylab.org/infernal/infernal-1.1.2.tar.gz
-label: Search sequence(s) against a covariance model database
+label: >-
+  Infernal: Search sequence(s) against a covariance model database
 arguments:
   - position: 0
     prefix: '--tblout'

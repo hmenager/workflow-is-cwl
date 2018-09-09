@@ -29,7 +29,8 @@ outputs:
       glob: '*.deoverlapped'
 doc: >-
   https://github.com/nawrockie/cmsearch_tblout_deoverlap/blob/master/00README.txt
-label: Remove lower scoring overlaps from cmsearch --tblout files.
+label: >-
+  Cmsearch-deoverlap: Remove lower scoring overlaps from cmsearch --tblout files.
 requirements:
   - class: EnvVarRequirement
     envDef:

@@ -76,7 +76,7 @@ doc: |
 
   Releases can be downloaded from https://github.com/bbuchfink/diamond/releases
 label: >-
-  diamond makedb: Sets up a reference protein database (in binary file format)
+  Diamond makedb: Sets up a reference protein database (in binary file format)
   for DIAMOND
 arguments:
   - position: 0
