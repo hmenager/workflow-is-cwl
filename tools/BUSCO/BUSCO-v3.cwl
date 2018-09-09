@@ -257,13 +257,15 @@ hints:
         gx:type: boolean
         gx:optional: True
       - gx:name: lineage
-        gx:type: directory
+        gx:type: data
       - gx:name: long
         gx:type: boolean
         gx:optional: True
       - gx:name: mode
+        gx:value: tran
         gx:type: text
       - gx:name: outputName
+        gx:value: TEST
         gx:type: text
       - gx:name: quiet
         gx:type: boolean
@@ -284,7 +286,7 @@ hints:
         gx:type: boolean
         gx:optional: True
       - gx:name: tempPath
-        gx:type: directory
+        gx:type: data
         gx:optional: True
       - gx:name: version
         gx:type: boolean
