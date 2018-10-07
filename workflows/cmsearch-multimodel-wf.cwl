@@ -36,7 +36,7 @@ steps:
     out:
       - id: matches
       - id: programOutput
-    run: ../tools/Infernal/cmsearch/infernal-cmsearch-v1.1.2.cwl
+    run: /home/foobar/snapshot/workflow-is-cwl/tools/Infernal/cmsearch/infernal-cmsearch-v1.1.2.cwl
     label: Search sequence(s) against a covariance model database
     scatter:
       - covariance_model_database
@@ -47,7 +47,7 @@ steps:
           - cmsearch/matches
     out:
       - id: result
-    run: ../utils/concatenate.cwl
+    run: /home/foobar/snapshot/workflow-is-cwl/utils/concatenate.cwl
   - id: remove_overlaps
     in:
       - id: clan_information
@@ -56,7 +56,7 @@ steps:
         source: concatenate_matches/result
     out:
       - id: deoverlapped_matches
-    run: ../tools/cmsearch-deoverlap/cmsearch-deoverlap-v0.02.cwl
+    run: /home/foobar/snapshot/workflow-is-cwl/tools/cmsearch-deoverlap/cmsearch-deoverlap-v0.02.cwl
     label: Remove lower scoring overlaps from cmsearch --tblout files.
 requirements:
   - class: ScatterFeatureRequirement
