@@ -5,7 +5,6 @@ $namespaces:
   edam: 'http://edamontology.org/'
   iana: 'https://www.iana.org/assignments/media-types/'
   s: 'http://schema.org/'
-  sbg: 'https://www.sevenbridges.com'
 baseCommand:
   - run_BUSCO.py
 inputs:
@@ -66,13 +65,7 @@ inputs:
       Adds substantially to the run time!
       Can improve results for some non-model organisms.
   - id: mode
-    type:
-      type: enum
-      symbols:
-        - geno
-        - prot
-        - tran
-      name: mode
+    type: BUSCO-assessment_modes.yaml#assessment_modes
     inputBinding:
       position: 0
       prefix: '--mode'
@@ -223,12 +216,15 @@ doc: >
   BUSCO is written for Python 3.x and Python 2.7+. It runs with the standard
   packages. We recommend using Python3 when available.
 label: >-
-  BUSCO: assessing genome assembly and annotation completeness with single-copy
+  Assesses genome assembly and annotation completeness with single-copy
   orthologs
 requirements:
   - class: ResourceRequirement
     coresMin: 1
   - class: InlineJavascriptRequirement
+  - class: SchemaDefRequirement
+    types:
+      - $import: BUSCO-assessment_modes.yaml
 hints:
   - class: SoftwareRequirement
     packages:
@@ -296,4 +292,4 @@ $schemas:
   - 'https://schema.org/docs/schema_org_rdfa.html'
 's:copyrightHolder': 'EMBL - European Bioinformatics Institute, 2018'
 's:license': 'https://www.apache.org/licenses/LICENSE-2.0'
-'sbg:wrapperAuthor': Maxim Scheremetjew
+'s:author': Maxim Scheremetjew

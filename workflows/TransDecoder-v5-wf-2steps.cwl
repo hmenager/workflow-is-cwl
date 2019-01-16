@@ -6,13 +6,33 @@ label: >-
 $namespaces:
   edam: 'http://edamontology.org/'
   s: 'http://schema.org/'
-  sbg: 'https://www.sevenbridges.com'
 inputs:
   - id: singleBestOnly
     type: boolean?
   - format: edam:format_1929  # FASTA
     id: transcriptsFile
     type: File
+  - format: 'edam:format_3475'
+    id: geneToTranscriptMap
+    type: File?
+  - id: geneticCode
+    type: ../tools/TransDecoder/TransDecoder-v5-genetic_codes.yaml#genetic_codes?
+  - id: minimumProteinLength
+    type: int?
+  - id: strandSpecific
+    type: boolean?
+  - id: noRefineStarts
+    type: boolean?
+  - id: retainBlastpHits
+    type: string?
+  - id: retainLongOrfsLength
+    type: int?
+  - id: retainLongOrfsMode
+    type: string?
+  - id: retainPfamHits
+    type: string?
+  - id: train
+    type: int?
 outputs:
   - id: bed_output
     outputSource:
@@ -35,6 +55,14 @@ steps:
     in:
       - id: transcriptsFile
         source: transcriptsFile
+      - id: geneToTranscriptMap
+        source: geneToTranscriptMap
+      - id: geneticCode
+        source: geneticCode
+      - id: minimumProteinLength
+        source: minimumProteinLength
+      - id: strandSpecific
+        source: strandSpecific
     out:
       - id: workingDir
     run: ../tools/TransDecoder/TransDecoder.LongOrfs-v5.cwl
@@ -45,6 +73,18 @@ steps:
         source: extract_long_orfs/workingDir
       - id: singleBestOnly
         source: singleBestOnly
+      - id: noRefineStarts
+        source: noRefineStarts
+      - id: retainBlastpHits
+        source: retainBlastpHits
+      - id: retainLongOrfsLength
+        source: retainLongOrfsLength
+      - id: retainLongOrfsMode
+        source: retainLongOrfsMode
+      - id: retainPfamHits
+        source: retainPfamHits
+      - id: train
+        source: train
       - id: transcriptsFile
         source: transcriptsFile
     out:
@@ -54,10 +94,13 @@ steps:
       - id: peptide_sequences
     run: ../tools/TransDecoder/TransDecoder.Predict-v5.cwl
     label: Predicts the likely coding regions
-requirements: []
+requirements:
+  - class: SchemaDefRequirement
+    types:
+      - $import: ../tools/TransDecoder/TransDecoder-v5-genetic_codes.yaml
 $schemas:
   - 'http://edamontology.org/EDAM_1.16.owl'
   - 'https://schema.org/docs/schema_org_rdfa.html'
 's:copyrightHolder': 'EMBL - European Bioinformatics Institute, 2018'
 's:license': 'https://www.apache.org/licenses/LICENSE-2.0'
-#'sbg:wrapperLicense': Maxim Scheremtjew
+'s:author': Maxim Scheremetjew

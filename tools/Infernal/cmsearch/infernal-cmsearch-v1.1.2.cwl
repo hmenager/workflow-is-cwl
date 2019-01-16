@@ -4,7 +4,6 @@ $namespaces:
   gx: "http://galaxyproject.org/cwl#"
   edam: 'http://edamontology.org/'
   s: 'http://schema.org/'
-  sbg: 'https://www.sevenbridges.com'
 baseCommand:
   - cmsearch
 inputs:
@@ -132,4 +131,4 @@ $schemas:
   - 'https://schema.org/docs/schema_org_rdfa.html'
 's:copyrightHolder': EMBL - European Bioinformatics Institute
 's:license': 'https://www.apache.org/licenses/LICENSE-2.0'
-'sbg:wrapperAuthor': Maxim Scheremetjew
+'s:author': Michael Crusoe, Maxim Scheremetjew

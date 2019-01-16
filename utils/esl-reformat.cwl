@@ -3,12 +3,11 @@ cwlVersion: v1.0
 $namespaces:
   edam: 'http://edamontology.org/'
   s: 'http://schema.org/'
-  sbg: 'https://www.sevenbridges.com'
 baseCommand:
   - esl-reformat
 inputs:
   - id: replace
-    type: replace?
+    type: esl-reformat-replace.yaml#replace?
     inputBinding:
       position: 1
       prefix: '--replace'
@@ -23,30 +22,16 @@ outputs:
     type: stdout
     format: 'edam:format_1929'
 doc: |
-  normalizes input sequeces to FASTA with fixed number of sequence characters
+  Normalizes input sequences to FASTA with fixed number of sequence characters
   per line using esl-reformat from https://github.com/EddyRivasLab/easel
-label: normalize to fasta
+label: Normalizes input sequences to FASTA using esl-reformat
 arguments:
   - position: 2
     valueFrom: fasta
 requirements:
   - class: SchemaDefRequirement
     types:
-      - fields:
-          - doc: >
-              Must be equal length with replace. Each character from the input
-              file will be replaced by its counterpart (at the same position) from
-              replace
-            label: null
-            name: find
-            type: string
-          - doc: must be equal length with find
-            label: null
-            name: replace
-            type: string
-        label: sequence token replacement
-        name: replace
-        type: record
+      - $import: esl-reformat-replace.yaml
   - class: ResourceRequirement
     ramMin: 100
     coresMax: 1
@@ -60,4 +45,4 @@ $schemas:
   - 'https://schema.org/docs/schema_org_rdfa.html'
 's:copyrightHolder': 'EMBL - European Bioinformatics Institute, 2017'
 's:license': 'https://www.apache.org/licenses/LICENSE-2.0'
-'sbg:wrapperAuthor': Maxim Scheremetjew
+'s:author': Michael Crusoe, Maxim Scheremetjew

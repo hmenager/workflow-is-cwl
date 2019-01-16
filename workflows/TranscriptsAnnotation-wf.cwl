@@ -8,19 +8,22 @@ requirements:
    types:
     - $import: ../utils/esl-reformat-replace.yaml
     - $import: ../tools/BUSCO/BUSCO-assessment_modes.yaml
+    - $import: ../tools/InterProScan/InterProScan-apps.yaml
+    - $import: ../tools/InterProScan/InterProScan-protein_formats.yaml
 
 inputs:
   transcriptsFile:
     type: File
-#   TODO: Resolve: Missing required 'format' for File at runtime
-#    format: edam:format_1929  # FASTA
+    format: edam:format_1929  # FASTA
   singleBestOnly: boolean?
   replace: ../utils/esl-reformat-replace.yaml#replace?
   phmmerSeqdb:
     type: File
-#   TODO: Resolve: Missing required 'format' for File at runtime
-#    format: edam:format_1929  # FASTA
+    format: edam:format_1929  # FASTA
   diamondSeqdb: File
+  i5Databases: Directory
+  i5Applications: ../tools/InterProScan/InterProScan-apps.yaml#apps[]?
+  i5OutputFormat: ../tools/InterProScan/InterProScan-protein_formats.yaml#protein_formats[]?
   blockSize: float?
   covariance_models: File[]
   clanInfoFile: File
@@ -90,22 +93,24 @@ steps:
     run: ../utils/esl-reformat.cwl
     in:
       sequences: identify_coding_regions/peptide_sequences
-#      TODO: Check with Michael how to resolve Type property error "['null', 'replace']" not a valid Avro schema
       replace: replace
     out: [ reformatted_sequences ]
 
   functional_analysis:
     doc: |
         Matches are generated against predicted CDS, using a sub set of databases
-        (Pfam, TIGRFAM, PRINTS, PROSITE patterns, Gene3d) from InterPro.
-    run: ../tools/InterProScan/InterProScan-v5.cwl
+        from InterPro.
+    run: InterProScan-v5-chunked-wf.cwl
     in:
-      proteinFile: remove_asterisks_and_reformat/reformatted_sequences
+      inputFile: remove_asterisks_and_reformat/reformatted_sequences
+      databases: i5Databases
+      applications: i5Applications
+      outputFormat: i5OutputFormat
     out: [ i5Annotations ]
 
   calculate_phmmer_matches:
     label: Calculates phmmer matches
-    run: ../tools/HMMER/phmmer-v3.1b2.cwl
+    run: ../tools/HMMER/phmmer-v3.2.cwl
     in:
       seqFile: identify_coding_regions/peptide_sequences
       seqdb: phmmerSeqdb

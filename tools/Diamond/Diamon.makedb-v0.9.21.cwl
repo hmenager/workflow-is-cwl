@@ -4,7 +4,6 @@ $namespaces:
   gx: "http://galaxyproject.org/cwl#"
   edam: 'http://edamontology.org/'
   s: 'http://schema.org/'
-  sbg: 'https://www.sevenbridges.com'
 baseCommand:
   - diamond
   - makedb
@@ -110,4 +109,4 @@ $schemas:
   - 'https://schema.org/docs/schema_org_rdfa.html'
 's:copyrightHolder': 'EMBL - European Bioinformatics Institute, 2018'
 's:license': 'https://www.apache.org/licenses/LICENSE-2.0'
-'sbg:wrapperAuthor': Maxim Scheremetjew
+'s:author': Maxim Scheremetjew
