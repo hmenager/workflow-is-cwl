@@ -1,0 +1,13 @@
+#                                                               --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name        accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+#
+# Program:         phmmer
+# Version:         3.2 (June 2018)
+# Pipeline mode:   SEARCH
+# Query file:      /var/lib/cwl/stg42970bae-bd97-4729-98a4-04b0c0cf03f9/test_transcripts.fasta.transdecoder.pep
+# Target file:     /var/lib/cwl/stg338edc1b-e5cc-4dab-b430-f07799bacdce/globins45.fa
+# Option settings: phmmer -o test_transcripts.fasta.transdecoder.pep.phmmer_matches.out --tblout test_transcripts.fasta.transdecoder.pep.phmmer_matches.tblout /var/lib/cwl/stg42970bae-bd97-4729-98a4-04b0c0cf03f9/test_transcripts.fasta.transdecoder.pep /var/lib/cwl/stg338edc1b-e5cc-4dab-b430-f07799bacdce/globins45.fa 
+# Current dir:     /tmp/cwl
+# Date:            Thu Jan 31 13:36:48 2019
+# [ok]

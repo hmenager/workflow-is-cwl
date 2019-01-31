@@ -1,0 +1,14 @@
+# BUSCO version is: 3.0.2 
+# The lineage dataset is: sample dataset BUSCO 2.0 (Creation date: 07.10.2016, number of species: 23, number of BUSCOs: 10)
+# To reproduce this run: python /software/applications/busco/3.0.2/scripts/run_BUSCO.py -i /var/lib/cwl/stg36c99f7d-ff4b-4f69-9a81-a7540bb7206a/test_transcripts.fasta -o TEST -l /var/lib/cwl/stg992b3a7b-9709-4872-ac02-ccbe4608fe2f/example/ -m transcriptome -c 1
+#
+BUSCO_1
+BUSCO_10
+BUSCO_2
+BUSCO_3
+BUSCO_4
+BUSCO_5
+BUSCO_6
+BUSCO_7
+BUSCO_8
+BUSCO_9
