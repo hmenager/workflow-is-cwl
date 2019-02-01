@@ -1,6 +1,7 @@
 class: CommandLineTool
 cwlVersion: v1.0
 $namespaces:
+  gx: "http://galaxyproject.org/cwl#"
   edam: 'http://edamontology.org/'
   s: 'http://schema.org/'
 baseCommand:
@@ -159,6 +160,37 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: 'greatfireball/ime_transdecoder:5.0.2'
+  - class: gx:interface
+    gx:inputs:
+      - gx:name: geneticCode
+        gx:type: text
+        gx:optional: True
+      - gx:name: longOpenReadingFrames
+        gx:type: data
+      - gx:name: noRefineStarts
+        gx:type: boolean
+        gx:optional: True
+      - gx:name: retainBlastpHits
+        gx:type: text
+        gx:optional: True
+      - gx:name: retainLongOrfsLength
+        gx:type: integer
+        gx:optional: True
+      - gx:name: retainLongOrfsMode
+        gx:type: text
+        gx:optional: True
+      - gx:name: retainPfamHits
+        gx:type: text
+        gx:optional: True
+      - gx:name: singleBestOnly
+        gx:type: boolean
+        gx:optional: True
+      - gx:name: train
+        gx:type: integer
+        gx:optional: True
+      - gx:name: transcriptsFile
+        gx:type: data
+        gx:format: 'txt'
 $schemas:
   - 'http://edamontology.org/EDAM_1.20.owl'
   - 'https://schema.org/docs/schema_org_rdfa.html'
