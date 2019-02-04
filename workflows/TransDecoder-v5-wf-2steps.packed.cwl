@@ -369,6 +369,60 @@
                 {
                     "dockerPull": "greatfireball/ime_transdecoder:5.0.2", 
                     "class": "DockerRequirement"
+                }, 
+                {
+                    "class": "http://galaxyproject.org/cwl#interface", 
+                    "http://galaxyproject.org/cwl#inputs": [
+                        {
+                            "http://galaxyproject.org/cwl#type": "text", 
+                            "http://galaxyproject.org/cwl#optional": true, 
+                            "http://galaxyproject.org/cwl#name": "geneticCode"
+                        }, 
+                        {
+                            "http://galaxyproject.org/cwl#type": "data", 
+                            "http://galaxyproject.org/cwl#name": "longOpenReadingFrames"
+                        }, 
+                        {
+                            "http://galaxyproject.org/cwl#type": "boolean", 
+                            "http://galaxyproject.org/cwl#optional": true, 
+                            "http://galaxyproject.org/cwl#name": "noRefineStarts"
+                        }, 
+                        {
+                            "http://galaxyproject.org/cwl#type": "text", 
+                            "http://galaxyproject.org/cwl#optional": true, 
+                            "http://galaxyproject.org/cwl#name": "retainBlastpHits"
+                        }, 
+                        {
+                            "http://galaxyproject.org/cwl#type": "integer", 
+                            "http://galaxyproject.org/cwl#optional": true, 
+                            "http://galaxyproject.org/cwl#name": "retainLongOrfsLength"
+                        }, 
+                        {
+                            "http://galaxyproject.org/cwl#type": "text", 
+                            "http://galaxyproject.org/cwl#optional": true, 
+                            "http://galaxyproject.org/cwl#name": "retainLongOrfsMode"
+                        }, 
+                        {
+                            "http://galaxyproject.org/cwl#type": "text", 
+                            "http://galaxyproject.org/cwl#optional": true, 
+                            "http://galaxyproject.org/cwl#name": "retainPfamHits"
+                        }, 
+                        {
+                            "http://galaxyproject.org/cwl#type": "boolean", 
+                            "http://galaxyproject.org/cwl#optional": true, 
+                            "http://galaxyproject.org/cwl#name": "singleBestOnly"
+                        }, 
+                        {
+                            "http://galaxyproject.org/cwl#type": "integer", 
+                            "http://galaxyproject.org/cwl#optional": true, 
+                            "http://galaxyproject.org/cwl#name": "train"
+                        }, 
+                        {
+                            "http://galaxyproject.org/cwl#format": "txt", 
+                            "http://galaxyproject.org/cwl#type": "data", 
+                            "http://galaxyproject.org/cwl#name": "transcriptsFile"
+                        }
+                    ]
                 }
             ]
         }, 
