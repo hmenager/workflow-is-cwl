@@ -131,7 +131,7 @@ hints:
         gx:optional: True
       - gx:name: databaseFile
         gx:type: data
-        gx:format: 'txt'
+        gx:format: 'dmnd'
       - gx:name: outputFormat
         gx:type: text
         gx:optional: True
