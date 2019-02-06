@@ -586,6 +586,51 @@
                 {
                     "dockerPull": "buchfink/diamond:version0.9.21", 
                     "class": "DockerRequirement"
+                }, 
+                {
+                    "class": "http://galaxyproject.org/cwl#interface", 
+                    "http://galaxyproject.org/cwl#inputs": [
+                        {
+                            "http://galaxyproject.org/cwl#type": "float", 
+                            "http://galaxyproject.org/cwl#optional": true, 
+                            "http://galaxyproject.org/cwl#name": "blockSize"
+                        }, 
+                        {
+                            "http://galaxyproject.org/cwl#format": "txt", 
+                            "http://galaxyproject.org/cwl#type": "data", 
+                            "http://galaxyproject.org/cwl#name": "databaseFile"
+                        }, 
+                        {
+                            "http://galaxyproject.org/cwl#type": "text", 
+                            "http://galaxyproject.org/cwl#optional": true, 
+                            "http://galaxyproject.org/cwl#name": "outputFormat"
+                        }, 
+                        {
+                            "http://galaxyproject.org/cwl#type": "integer", 
+                            "http://galaxyproject.org/cwl#optional": true, 
+                            "http://galaxyproject.org/cwl#name": "queryGeneticCode"
+                        }, 
+                        {
+                            "http://galaxyproject.org/cwl#format": "txt", 
+                            "http://galaxyproject.org/cwl#type": "data", 
+                            "http://galaxyproject.org/cwl#name": "queryInputFile"
+                        }, 
+                        {
+                            "http://galaxyproject.org/cwl#type": "text", 
+                            "http://galaxyproject.org/cwl#optional": true, 
+                            "http://galaxyproject.org/cwl#name": "strand"
+                        }, 
+                        {
+                            "http://galaxyproject.org/cwl#type": "text", 
+                            "http://galaxyproject.org/cwl#optional": true, 
+                            "http://galaxyproject.org/cwl#name": "taxonList"
+                        }, 
+                        {
+                            "http://galaxyproject.org/cwl#type": "integer", 
+                            "http://galaxyproject.org/cwl#optional": true, 
+                            "http://galaxyproject.org/cwl#name": "threads"
+                        }
+                    ]
                 }
             ]
         }, 

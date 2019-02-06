@@ -1,6 +1,7 @@
 class: CommandLineTool
 cwlVersion: v1.0
 $namespaces:
+  gx: "http://galaxyproject.org/cwl#"
   edam: 'http://edamontology.org/'
   s: 'http://schema.org/'
 baseCommand:
@@ -123,6 +124,32 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: 'buchfink/diamond:version0.9.21'
+  - class: gx:interface
+    gx:inputs:
+      - gx:name: blockSize
+        gx:type: float
+        gx:optional: True
+      - gx:name: databaseFile
+        gx:type: data
+        gx:format: 'txt'
+      - gx:name: outputFormat
+        gx:type: text
+        gx:optional: True
+      - gx:name: queryGeneticCode
+        gx:type: integer
+        gx:optional: True
+      - gx:name: queryInputFile
+        gx:type: data
+        gx:format: 'txt'
+      - gx:name: strand
+        gx:type: text
+        gx:optional: True
+      - gx:name: taxonList
+        gx:type: text
+        gx:optional: True
+      - gx:name: threads
+        gx:type: integer
+        gx:optional: True
 $schemas:
   - 'http://edamontology.org/EDAM_1.20.owl'
   - 'https://schema.org/docs/schema_org_rdfa.html'
