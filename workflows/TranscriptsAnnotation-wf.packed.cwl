@@ -596,7 +596,7 @@
                             "http://galaxyproject.org/cwl#name": "blockSize"
                         }, 
                         {
-                            "http://galaxyproject.org/cwl#format": "txt", 
+                            "http://galaxyproject.org/cwl#format": "dmnd", 
                             "http://galaxyproject.org/cwl#type": "data", 
                             "http://galaxyproject.org/cwl#name": "databaseFile"
                         }, 
