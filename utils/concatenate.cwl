@@ -37,9 +37,11 @@ hints:
     dockerPull: 'alpine:3.7'
   - class: gx:interface
     gx:inputs:
-      - gx:name: blastSingleCore
-        gx:type: boolean
-        gx:optional: True
+      - gx:name: files
+        gx:type: data
+        gx:format: 'txt'
+      - gx:name: outputFileName
+        gx:type: text
 stdout: $(inputs.outputFileName)
 $schemas:
   - 'https://schema.org/docs/schema_org_rdfa.html'

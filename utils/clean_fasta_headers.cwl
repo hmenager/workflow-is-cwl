@@ -31,9 +31,9 @@ hints:
     dockerPull: 'alpine:3.7'
   - class: gx:interface
     gx:inputs:
-      - gx:name: blastSingleCore
-        gx:type: boolean
-        gx:optional: True
+      - gx:name: sequences
+        gx:type: data
+        gx:format: 'txt'
 
 $namespaces:
  gx: "http://galaxyproject.org/cwl#"

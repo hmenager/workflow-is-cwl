@@ -54,9 +54,12 @@ hints:
     dockerPull: biopython/biopython:latest
   - class: gx:interface
     gx:inputs:
-      - gx:name: blastSingleCore
-        gx:type: boolean
+      - gx:name: chunk_size
+        gx:type: integer
         gx:optional: True
+      - gx:name: seqs
+        gx:format: 'txt'
+        gx:type: data
   - class: SoftwareRequirement
     packages:
       biopython:
