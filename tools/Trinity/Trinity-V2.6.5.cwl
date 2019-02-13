@@ -1,6 +1,7 @@
 class: CommandLineTool
 cwlVersion: v1.0
 $namespaces:
+  gx: "http://galaxyproject.org/cwl#"
   edam: 'http://edamontology.org/'
   s: 'http://schema.org/'
 
@@ -131,6 +132,32 @@ hints:
           - 2.6.5
   - class: DockerRequirement
     dockerPull: 'trinityrnaseq/trinityrnaseq:2.6.5'
+  - class: gx:interface
+    gx:inputs:
+      - gx:name: trinity_seq_type
+        gx:type: text
+        gx:value: fa
+      - gx:name: trinity_max_mem
+        gx:type: text
+        gx:value: 20G
+      - gx:name: left_reads
+        gx:type: data
+        gx:format: 'txt'
+      - gx:name: right_reads
+        gx:type: data
+        gx:format: 'txt'
+      - gx:name: trinity_ss_lib_type
+        gx:type: text
+      - gx:name: trinity_cpu
+        gx:type: integer
+        gx:optional: True
+        gx:value: 2
+      - gx:name: no_normalize_reads
+        gx:type: boolean
+        gx:optional: True
+      - gx:name: normalize_by_read_set
+        gx:type: boolean
+        gx:optional: True
 
 $schemas:
   - 'http://edamontology.org/EDAM_1.16.owl'

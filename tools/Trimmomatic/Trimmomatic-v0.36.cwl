@@ -11,6 +11,56 @@ hints:
           - 0.36--6
   - class: DockerRequirement
     dockerPull: 'quay.io/biocontainers/trimmomatic:0.36--6'
+  - class: gx:interface
+    gx:inputs:
+      - gx:name: phred
+        gx:type: text
+        gx:optional: True
+      - gx:name: tophred64
+        gx:type: boolean
+        gx:optional: True
+      - gx:name: headcrop
+        gx:type: integer
+        gx:optional: True
+      - gx:name: tophred33
+        gx:type: boolean
+        gx:optional: True
+      - gx:name: minlen
+        gx:type: integer
+        gx:optional: True
+      - gx:name: java_opts
+        gx:type: text
+        gx:optional: True
+      - gx:name: leading
+        gx:type: integer
+        gx:optional: True
+      - gx:name: slidingwindow
+        gx:type: text
+        gx:optional: True
+      - gx:name: illuminaClip
+        gx:type: text
+        gx:optional: True
+      - gx:name: crop
+        gx:type: integer
+        gx:optional: True
+      - gx:name: reads2
+        gx:type: data
+        gx:format: 'txt'
+        gx:optional: True
+      - gx:name: reads1
+        gx:type: data
+        gx:format: 'txt'
+      - gx:name: avgqual
+        gx:type: integer
+        gx:optional: True
+      - gx:name: trailing
+        gx:type: integer
+        gx:optional: True
+      - gx:name: maxinfo
+        gx:type: text
+        gx:optional: True
+      - gx:name: end_mode
+        gx:type: text
 
 requirements:
  ResourceRequirement:
@@ -336,6 +386,7 @@ doc: >
 label: Trimmomatic - A flexible read trimming tool for Illumina NGS data
 
 $namespaces:
+ gx: "http://galaxyproject.org/cwl#"
  edam: http://edamontology.org/
  s: http://schema.org/
 $schemas:

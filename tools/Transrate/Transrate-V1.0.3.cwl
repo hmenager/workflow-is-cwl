@@ -1,6 +1,7 @@
 class: CommandLineTool
 cwlVersion: v1.0
 $namespaces:
+  gx: "http://galaxyproject.org/cwl#"
   edam: 'http://edamontology.org/'
   s: 'http://schema.org/'
 baseCommand:
@@ -87,6 +88,24 @@ hints:
           - 1.0.3
   - class: DockerRequirement
     dockerPull: 'arnaudmeng/transrate:1.0.3'
+  - class: gx:interface
+    gx:inputs:
+      - gx:name: in_fasta
+        gx:type: data
+        gx:format: 'txt'
+      - gx:name: left_fastq
+        gx:type: data
+        gx:format: 'txt'
+      - gx:name: right_fastq
+        gx:type: data
+        gx:format: 'txt'
+        gx:optional: True
+      - gx:name: n_threads
+        gx:type: integer
+        gx:optional: True
+      - gx:name: log_level
+        gx:type: text
+        gx:optional: True
 $schemas:
   - 'http://edamontology.org/EDAM_1.20.owl'
   - 'https://schema.org/docs/schema_org_rdfa.html'
