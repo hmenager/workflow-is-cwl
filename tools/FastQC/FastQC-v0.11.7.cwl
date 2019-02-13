@@ -55,7 +55,8 @@ doc: >
     
   Please visit https://www.bioinformatics.babraham.ac.uk/projects/fastqc/ for full documentation.
     
-label: FastQC - A high throughtput sequence analyses QC.
+label: >-
+  FastQC: a high throughtput sequence analyses QC.
 
 hints:
   - class: DockerRequirement

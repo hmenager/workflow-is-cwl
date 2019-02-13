@@ -73,7 +73,8 @@ doc: >
 
   Documentation at http://hibberdlab.com/transrate
         
-label: Transrate - A de-novo transcriptome assembly evaluation facility.
+label: >-
+  Transrate: a de-novo transcriptome assembly evaluation facility.
 
 arguments:
   - position: 0

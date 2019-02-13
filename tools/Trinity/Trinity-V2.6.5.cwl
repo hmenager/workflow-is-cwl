@@ -118,7 +118,8 @@ doc: >
 
   Documentation at https://github.com/trinityrnaseq/trinityrnaseq/wiki
 
-label: Trinity assembles transcript sequences from Illumina RNA-Seq data.
+label: >-
+  Trinity: assembles transcript sequences from Illumina RNA-Seq data.
 
 arguments:
   - prefix: '--output'

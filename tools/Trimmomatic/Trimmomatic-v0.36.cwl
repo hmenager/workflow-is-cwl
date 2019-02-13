@@ -383,7 +383,8 @@ doc: >
   Trimmomatic works with FASTQ files (using phred + 33 or phred + 64 quality scores,
   depending on the Illumina pipeline used).
 
-label: Trimmomatic - A flexible read trimming tool for Illumina NGS data
+label: >-
+  Trimmomatic: a flexible read trimming tool for Illumina NGS data
 
 $namespaces:
  gx: "http://galaxyproject.org/cwl#"
