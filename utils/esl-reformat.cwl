@@ -1,6 +1,7 @@
 class: CommandLineTool
 cwlVersion: v1.0
 $namespaces:
+  gx: "http://galaxyproject.org/cwl#"
   edam: 'http://edamontology.org/'
   s: 'http://schema.org/'
 baseCommand:
@@ -39,6 +40,14 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/hmmer:3.2--hfc679d8_3
+  - class: gx:interface
+    gx:inputs:
+      - gx:name: replace
+        gx:type: text
+        gx:optional: True
+      - gx:name: sequences
+        gx:format: 'txt'
+        gx:type: data
 stdout: $(inputs.sequences.basename).reformatted_seqs
 $schemas:
   - 'http://edamontology.org/EDAM_1.16.owl'

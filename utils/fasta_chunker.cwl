@@ -1,6 +1,7 @@
 class: CommandLineTool
 cwlVersion: v1.0
 $namespaces:
+  gx: "http://galaxyproject.org/cwl#"
   edam: 'http://edamontology.org/'
   s: 'http://schema.org/'
 baseCommand:
@@ -51,6 +52,14 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: biopython/biopython:latest
+  - class: gx:interface
+    gx:inputs:
+      - gx:name: chunk_size
+        gx:type: integer
+        gx:optional: True
+      - gx:name: seqs
+        gx:format: 'txt'
+        gx:type: data
   - class: SoftwareRequirement
     packages:
       biopython:

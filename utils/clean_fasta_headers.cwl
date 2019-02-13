@@ -29,8 +29,14 @@ outputs:
 hints:
   - class: DockerRequirement
     dockerPull: 'alpine:3.7'
+  - class: gx:interface
+    gx:inputs:
+      - gx:name: sequences
+        gx:type: data
+        gx:format: 'txt'
 
 $namespaces:
+ gx: "http://galaxyproject.org/cwl#"
  edam: http://edamontology.org/
  s: http://schema.org/
 $schemas:
