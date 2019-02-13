@@ -24,7 +24,7 @@ outputs:
 doc: |
   Normalizes input sequences to FASTA with fixed number of sequence characters
   per line using esl-reformat from https://github.com/EddyRivasLab/easel
-label: Normalizes input sequences to FASTA using esl-reformat
+label: esl-reformat: normalizes input sequences to FASTA using esl-reformat
 arguments:
   - position: 2
     valueFrom: fasta
