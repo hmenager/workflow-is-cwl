@@ -1,6 +1,7 @@
 class: CommandLineTool
 cwlVersion: v1.0
 $namespaces:
+  gx: "http://galaxyproject.org/cwl#"
   s: 'http://schema.org/'
 baseCommand:
   - cat
@@ -34,6 +35,11 @@ requirements:
 hints:
   - class: DockerRequirement
     dockerPull: 'alpine:3.7'
+  - class: gx:interface
+    gx:inputs:
+      - gx:name: blastSingleCore
+        gx:type: boolean
+        gx:optional: True
 stdout: $(inputs.outputFileName)
 $schemas:
   - 'https://schema.org/docs/schema_org_rdfa.html'
