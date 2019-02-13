@@ -2,7 +2,8 @@
 cwlVersion: v1.0
 class: CommandLineTool
 
-label: clean_fasta_headers: replaces problematic characters from FASTA headers with dashes
+label: >-
+  clean_fasta_headers: replaces problematic characters from FASTA headers with dashes
 
 requirements:
   ResourceRequirement:

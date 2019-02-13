@@ -20,7 +20,8 @@ outputs:
       glob: 'chunks/*_*.fasta'
     format: 'edam:format_1929'
 doc: 'based upon code by developers from EMBL-EBI'
-label: fasta_chunker: split FASTA by number of records
+label: >-
+  fasta_chunker: split FASTA by number of records
 arguments:
   - position: 0
     prefix: '-c'
